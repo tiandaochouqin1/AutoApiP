@@ -6,6 +6,7 @@ import json,sys,time,random
 app_num=os.getenv('APP_NUM')
 if app_num == '':
     app_num = '1'
+print('\n' + str(app_num) + '\n')
 access_token_list=['wangziyingwen']*int(app_num)
 #配置选项，自由选择
 config_list = {'每次轮数':2,
@@ -112,6 +113,7 @@ for c in range(1,config_list['每次轮数']+1):
         if a==1:
             client_id=os.getenv('CLIENT_ID')
             client_secret=os.getenv('CLIENT_SECRET')
+            print('\n'+client_id + '\n')
             print('\n'+'应用/账号 '+str(a)+' 的第'+str(c)+'轮'+time.asctime(time.localtime(time.time()))+'\n')
             if config_list['是否开启随机api顺序'] == 'Y':
                 print("已开启随机顺序,共12个api,自己数")
@@ -124,6 +126,7 @@ for c in range(1,config_list['每次轮数']+1):
         else:
             client_id=os.getenv('CLIENT_ID_'+str(a))
             client_secret=os.getenv('CLIENT_SECRET_'+str(a))
+            print('\n'+client_id + '\n')
             print('\n'+'应用/账号 '+str(a)+' 的第'+str(c)+'轮'+time.asctime(time.localtime(time.time()))+'\n')
             if config_list['是否开启随机api顺序'] == 'Y':
                 print("已开启随机顺序,共12个api,自己数")
